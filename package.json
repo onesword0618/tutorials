@@ -1,0 +1,47 @@
+{
+  "name": "tutorials",
+  "version": "0.1.0",
+  "description": "react tutorial",
+  "author": "onesword0618",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --content-base public --mode development --inline"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onesword0618/tutorials.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "bugs": {
+    "url": "https://github.com/onesword0618/tutorials/issues"
+  },
+  "homepage": "https://github.com/onesword0618/tutorials#readme"
+}
