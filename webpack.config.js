@@ -22,7 +22,6 @@ module.exports = {
       filename: "build.js"
     },
     plugins: debug ? [] : [
-      new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
     ]
 };
