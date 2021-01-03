@@ -1,12 +1,13 @@
 {
-  "name": "tutorials",
-  "version": "0.1.0",
-  "description": "react tutorial",
   "author": "onesword0618",
+  "description": "react tutorial",
   "license": "MIT",
-  "main": "index.js",
+  "name": "tutorials",
+  "private": "true",
+  "version": "0.1.0",
   "scripts": {
-    "start": "webpack serve --content-base public --mode development --inline"
+    "build": "webpack --mode development",
+    "start": "webpack serve --content-base public --mode development"
   },
   "dependencies": {
     "react": "^17.0.1",
@@ -17,9 +18,11 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.2.2",
-    "webpack": "^5.11.1",
+    "css-loader": "^5.0.1",
+    "style-loader": "^2.0.0",
     "webpack-cli": "^4.3.1",
-    "webpack-dev-server": "^3.11.1"
+    "webpack-dev-server": "^3.11.1",
+    "webpack": "^5.11.1"
   },
   "browserslist": {
     "production": [
