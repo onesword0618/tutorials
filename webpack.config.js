@@ -21,7 +21,5 @@ module.exports = {
       path: __dirname + "/dist/",
       filename: "build.js"
     },
-    plugins: debug ? [] : [
-      new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-    ]
+    plugins: debug ? [] : []
 };
