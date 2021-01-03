@@ -1,10 +1,12 @@
-let debug   = process.env.NODE_ENV !== "production";
-let webpack = require('webpack');
+let debug   = process.env.NODE_ENV !== 'production';
 let path    = require('path');
 
 module.exports = {
-  context: path.join(__dirname, "src"),
-  entry: "./index.js",
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
   module: {
     rules: [{
       test: /\.jsx?$/,
@@ -16,10 +18,6 @@ module.exports = {
           }
         }]
       }]
-    },
-    output: {
-      path: __dirname + "/dist/",
-      filename: "build.js"
     },
     plugins: debug ? [] : []
 };
