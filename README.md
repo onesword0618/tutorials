@@ -1,8 +1,6 @@
 # tutorials
 
-tutorials
-
 ## USAGE
 
-build : npm run build
+build : npm run build  
 start : npm start
