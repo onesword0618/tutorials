@@ -2,7 +2,7 @@
  * 勝利条件の判定をする関数
  * @param {*} squares マス目を模した配列
  */
-export function calculateWinner(squares) {
+export function calculateWinner(squares:number[]) {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -13,8 +13,9 @@ export function calculateWinner(squares) {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
+  const lineLength:number = lines.length;
+  for (let i:number = 0; i < lineLength; i++) {
+    const [a, b, c]:number[] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
     }
