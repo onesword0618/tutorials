@@ -8,12 +8,13 @@ type Props = {
 }
 
 export const Square: React.FC<Props> = (props) => {
+  const {onClick,value} = props;
   return (
     <button
       className="square"
-      onClick={props.onClick}
+      onClick={onClick}
     >
-      {props.value}
+      {value}
     </button>
   );
 }
