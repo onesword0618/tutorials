@@ -2,19 +2,8 @@ import './index.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {calculateWinner} from './domain/decide';
-
-function Square(props) {
-    return (
-      <button
-        className="square"
-        onClick={props.onClick}
-      >
-        {props.value}
-      </button>
-    );
-};
-
+import { calculateWinner } from './domain/decide';
+import { Square } from './components/Square';
 class Board extends React.Component {
   renderSquare(i) {
     return (
