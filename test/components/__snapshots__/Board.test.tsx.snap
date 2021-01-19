@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`盤面を表現しているコンポーネントの検証 盤面が描画されること SnapShotと同一であること 1`] = `
+<div>
+  <div
+    className="board-row"
+  >
+    <button
+      className="square"
+      onClick={[Function]}
+    >
+      X
+    </button>
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <button
+      className="square"
+      onClick={[Function]}
+    >
+      X
+    </button>
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <button
+      className="square"
+      onClick={[Function]}
+    >
+      X
+    </button>
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+    <button
+      className="square"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;
