@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`マス目を表現しているコンポーネントの検証 マス目が描画されること SnapShotと同一であること 1`] = `
+<button
+  className="square"
+  onClick={[Function]}
+>
+  O
+</button>
+`;
