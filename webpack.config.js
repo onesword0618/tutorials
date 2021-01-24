@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   // https://webpack.js.org/configuration/entry-context/#entry
   entry: {
-    index: './src/index.js'
+    index: './src/index.tsx'
   },
   output: {
     // https://webpack.js.org/configuration/output/#outputfilename
