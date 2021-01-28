@@ -3,6 +3,7 @@ import '../index.css';
 import React, { useState } from 'react';
 import { findWinner } from '../domain/findWinner';
 import { Board } from './Board';
+import { Moves } from './Moves';
 
 export const Game : React.FC = () => {
   const [history, setHistory] = useState(
@@ -35,21 +36,6 @@ export const Game : React.FC = () => {
   const current = history[stepNumber];
   const winner:(string|null) = findWinner(current.squares);
 
-  const moves = history.map((_step, move) => {
-    const desc = move ?
-      'Go to move #' + move :
-      'Go to game start';
-    return (
-      <li key={move}>
-        <button
-          onClick={() => jumpTo(move)}
-        >
-          {desc}
-        </button>
-      </li>
-    );
-  });
-
   let status:string;
   if (winner) {
     status = 'Winner: ' + winner;
@@ -67,7 +53,10 @@ export const Game : React.FC = () => {
       </div>
       <div className="game-info">
         <div>{status}</div>
-        <ol>{moves}</ol>
+        <Moves
+          history={history}
+          jumpTo={jumpTo}
+        />
       </div>
     </div>
   );
