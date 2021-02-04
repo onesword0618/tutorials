@@ -1,13 +1,20 @@
 import '../index.css';
 
 import React, { useState } from 'react';
-import { findWinner } from '../domain/findWinner';
+
 import { Board } from './Board';
 import { Moves } from './Moves';
+import { findWinner } from '../domain/findWinner';
 
 export const Game : React.FC = () => {
   const [history, setHistory] = useState(
-    [{ squares: Array(9).fill(null) }]
+    [{
+      squares: Array(9).fill(null),
+      location: {
+        col: 0,
+        row: 0
+      }
+    }]
   );
 
   const [stepNumber, setStepNumber] = useState<number>(0);
@@ -23,7 +30,15 @@ export const Game : React.FC = () => {
     };
 
     squares[i] = xIsNext ? 'X' : 'O';
-    setHistory(_history.concat([{ squares: squares }]));
+    setHistory(_history.concat([
+      {
+        squares: squares,
+        location: {
+          col: i % 3 + 1,
+          row: Math.trunc(i / 3 + 1),
+        }
+      }
+    ]));
     setStepNumber(_history.length);
     setXIsNext(!xIsNext);
   };

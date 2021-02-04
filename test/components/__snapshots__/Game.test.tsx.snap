@@ -70,6 +70,8 @@ exports[`ゲームを表現しているコンポーネントの検証 ゲーム�
           onClick={[Function]}
         >
           Go to game start
+           
+          
         </button>
       </li>
     </ol>
