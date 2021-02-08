@@ -71,6 +71,7 @@ export const Game : React.FC = () => {
         <Moves
           history={history}
           jumpTo={jumpTo}
+          currentNumber={stepNumber}
         />
       </div>
     </div>
