@@ -6,10 +6,11 @@ import React from 'react';
 type Props = {
   history: History[];
   jumpTo: (move: number) => void;
+  currentNumber:number;
 }
 
 export const Moves : React.FC<Props> = (props) => {
-  const {history,jumpTo} = props;
+  const {history,jumpTo,currentNumber} = props;
   return (
     <ol>
     {history.map((step, move) => {
@@ -17,7 +18,10 @@ export const Moves : React.FC<Props> = (props) => {
       const location = move ? `(${step.location.col}, ${step.location.row})` : '';
       return (
         <li key={move}>
-          <button onClick={() => jumpTo(move)}>{desc} {location}</button>
+          <button onClick={() => jumpTo(move)}>
+            {move == currentNumber ? <b>{desc}</b> : desc}
+            {location}
+          </button>
         </li>
       );
     })}
