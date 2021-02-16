@@ -19,6 +19,7 @@ export const Game : React.FC = () => {
 
   const [stepNumber, setStepNumber] = useState<number>(0);
   const [xIsNext, setXIsNext] = useState<boolean>(true);
+  const [toggle, setToggle] = useState<boolean>(true);
 
   const handleClick = (i: number) => {
     const _history = history.slice(0, stepNumber + 1);
@@ -68,11 +69,28 @@ export const Game : React.FC = () => {
       </div>
       <div className="game-info">
         <div>{status}</div>
-        <Moves
-          history={history}
-          jumpTo={jumpTo}
-          currentNumber={stepNumber}
-        />
+        <div>
+          <button onClick={() => {setToggle(!toggle)}}>
+            {toggle ? 'Sort descending' : 'Sort ascending'}
+          </button>
+        </div>
+        {
+          toggle ?
+          <ol>
+            <Moves
+              history={history}
+              jumpTo={jumpTo}
+              currentNumber={stepNumber}
+            />
+          </ol> :
+          <ol reversed>
+            <Moves
+              history={history.reverse()}
+              jumpTo={jumpTo}
+              currentNumber={stepNumber}
+            />
+          </ol>
+        }
       </div>
     </div>
   );

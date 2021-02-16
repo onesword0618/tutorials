@@ -64,6 +64,13 @@ exports[`ゲームを表現しているコンポーネントの検証 ゲーム�
     <div>
       Next player: X
     </div>
+    <div>
+      <button
+        onClick={[Function]}
+      >
+        Sort descending
+      </button>
+    </div>
     <ol>
       <li>
         <button
