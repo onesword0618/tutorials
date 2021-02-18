@@ -1,5 +1,5 @@
-import React from 'react';
 import {Board} from '../../src/components/Board';
+import React from 'react';
 import renderer from 'react-test-renderer';
 
 describe('盤面を表現しているコンポーネントの検証',() => {
@@ -11,6 +11,7 @@ describe('盤面を表現しているコンポーネントの検証',() => {
         <Board
           squares = {squeres}
           onClick = {() => 1}
+          line = {[1,2,3]}
         />
       );
 
