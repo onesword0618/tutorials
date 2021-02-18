@@ -12,11 +12,11 @@ exports[`盤面を表現しているコンポーネントの検証 盤面が描�
       X
     </button>
     <button
-      className="square"
+      className="square highlight"
       onClick={[Function]}
     />
     <button
-      className="square"
+      className="square highlight"
       onClick={[Function]}
     />
   </div>
@@ -24,7 +24,7 @@ exports[`盤面を表現しているコンポーネントの検証 盤面が描�
     className="board-row"
   >
     <button
-      className="square"
+      className="square highlight"
       onClick={[Function]}
     >
       X

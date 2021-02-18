@@ -10,6 +10,7 @@ describe('マス目を表現しているコンポーネントの検証',() => {
         <Square
           value = {'O'}
           onClick = {() => 1}
+          highlight={false}
         />
       );
 

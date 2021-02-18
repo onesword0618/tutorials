@@ -1,7 +1,8 @@
-import React from 'react';
-import {Moves} from '../../src/components/Moves';
-import renderer from 'react-test-renderer';
 import { History, ISquare } from '../../src/domain/type';
+
+import {Moves} from '../../src/components/Moves';
+import React from 'react';
+import renderer from 'react-test-renderer';
 
 describe('実行履歴を表現しているコンポーネントの検証',() => {
 
@@ -19,6 +20,7 @@ describe('実行履歴を表現しているコンポーネントの検証',() =>
         <Moves
           history={Prop.histories}
           jumpTo={Prop.onclick}
+          currentNumber={1}
         />
       );
 

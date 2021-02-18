@@ -26,7 +26,7 @@ export const Game : React.FC = () => {
     const current = _history[_history.length - 1];
     const squares = current.squares.slice();
 
-    if (findWinner(squares) || squares[i]) {
+    if (findWinner(squares).winner || squares[i]) {
       return;
     };
 
@@ -50,11 +50,11 @@ export const Game : React.FC = () => {
   };
 
   const current = history[stepNumber];
-  const winner:(string|null) = findWinner(current.squares);
+  const gameSet:{ winner:(string | null); line: number[]; } | { winner: null; line: null } = findWinner(current.squares);
 
   let status:string;
-  if (winner) {
-    status = 'Winner: ' + winner;
+  if (gameSet.winner) {
+    status = 'Winner: ' + gameSet.winner;
   } else {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   };
@@ -65,6 +65,7 @@ export const Game : React.FC = () => {
         <Board
           squares={current.squares}
           onClick={(i) => handleClick(i)}
+          line={gameSet.line}
         />
       </div>
       <div className="game-info">
