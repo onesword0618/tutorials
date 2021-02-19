@@ -50,11 +50,13 @@ export const Game : React.FC = () => {
   };
 
   const current = history[stepNumber];
-  const gameSet:{ winner:(string | null); line: number[]; } | { winner: null; line: null } = findWinner(current.squares);
+  const gameSet:{ winner:(string | null); line: (number[] | null) } = findWinner(current.squares);
 
   let status:string;
-  if (gameSet.winner) {
+  if (gameSet.winner && gameSet.winner !== 'DRAW') {
     status = 'Winner: ' + gameSet.winner;
+  } else if (gameSet.winner === 'DRAW') {
+    status = 'DRAW';
   } else {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   };
