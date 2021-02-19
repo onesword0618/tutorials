@@ -4,7 +4,7 @@
   "license": "MIT",
   "name": "tutorials",
   "private": "true",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "webpack serve --open --config webpack.dev.js",
