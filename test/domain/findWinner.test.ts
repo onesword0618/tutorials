@@ -57,4 +57,20 @@ describe('勝利条件として定義した配列の各要素の組み合わせ�
       expect(findWinner(squeres)).toEqual({'line': [2, 4, 6], 'winner': 'X'});
     });
   });
+
+  describe('勝利条件の配列の[2,4,6]を満たしている場合',() => {
+    test('{"line": [2, 4, 6], "winner": "O"}が返却されること',() =>{
+      const squeres:(string | null)[] = [null,null,'O',null,'O',null,'O',null,null];
+      expect(findWinner(squeres)).toEqual({'line': [2, 4, 6], 'winner': 'O'});
+    });
+  });
+});
+
+describe('勝利条件を満たすことができない場合に引き分けの文字列を返却する',() => {
+  describe('勝利条件を満たしていない場合',() => {
+    test('{"line": [2, 4, 6], "winner": "X"}が返却されること',() =>{
+      const squeres:(string | null)[] = ['X','X','O','O','O','X','X','O','X'];
+      expect(findWinner(squeres)).toEqual({'line': null, 'winner': 'DRAW'});
+    });
+  });
 });

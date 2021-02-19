@@ -2,7 +2,7 @@
  * 勝利条件の判定をする関数
  * @param {*} squares マス目を模した配列
  */
-export function findWinner(squares:(string | null)[]) : { winner:(string | null); line: number[]; } | { winner: null; line: null } {
+export function findWinner(squares:(string | null)[]) : { winner:(string | null); line: (number[] | null)} {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -23,7 +23,15 @@ export function findWinner(squares:(string | null)[]) : { winner:(string | null)
       };
     };
   };
-  return  {
+
+  if(squares.every(square => square)) {
+    return {
+      winner: 'DRAW',
+      line: null,
+    };
+  }
+
+  return {
     winner: null,
     line: null,
   };
