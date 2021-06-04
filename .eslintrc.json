@@ -28,5 +28,6 @@
         "embertest": false,
         "webextensions": false,
         "greasemonkey": false,
-    }
+    },
+    "globals": {}
 }
