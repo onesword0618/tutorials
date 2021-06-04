@@ -29,5 +29,8 @@
         "webextensions": false,
         "greasemonkey": false,
     },
-    "globals": {}
+    "settings": {
+    },
+    "globals": {
+    }
 }
