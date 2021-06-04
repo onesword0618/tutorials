@@ -30,6 +30,9 @@
         "webextensions": false,
         "greasemonkey": false,
     },
+    "extends": [
+      "eslint:recommended"
+    ],
     "settings": {
     },
     "globals": {
