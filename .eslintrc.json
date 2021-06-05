@@ -2,17 +2,6 @@
     "root": true,
     "env": {
         "browser": true,
-        "node": false,
-        "commonjs": false,
-        "shared-node-browser": false,
-        "es6": false,
-        "es2017": false,
-        "es2020": false,
-        "es2021": true,
-        "worker": false,
-        "amd": false,
-        "mocha": false,
-        "jasmine": false,
         "jest": true,
         "phantomjs": false,
         "protractor": false,
@@ -32,9 +21,32 @@
     },
     "parser": "@typescript-eslint/parser",
     "extends": [
-      "eslint:recommended"
+      "eslint:recommended",
+      "eslint-plugin-react"
     ],
     "settings": {
+      "react": {
+        "createClass": "createReactClass",
+        "pragma": "React",
+        "fragment": "Fragment",
+        "version": "detect",
+        "flowVersion": "0.53"
+      },
+      "propWrapperFunctions": [
+          "forbidExtraProps",
+          {"property": "freeze", "object": "Object"},
+          {"property": "myFavoriteWrapper"}
+      ],
+      "componentWrapperFunctions": [
+          "observer",
+          {"property": "styled"},
+          {"property": "observer", "object": "Mobx"},
+          {"property": "observer", "object": "<pragma>"}
+      ],
+      "linkComponents": [
+        "Hyperlink",
+        {"name": "Link", "linkAttribute": "to"}
+      ]
     },
     "globals": {
     }
