@@ -28,7 +28,8 @@
       "eslint:recommended",
       "eslint-plugin-react",
       "plugin:react-hooks/recommended",
-      "plugin:jsx-a11y/recommended"
+      "plugin:jsx-a11y/recommended",
+      "plugin:json/recommended"
     ],
     "settings": {
       "json/sort-package-json": "standard",
