@@ -28,8 +28,9 @@
         "atomtest": false,
         "embertest": false,
         "webextensions": false,
-        "greasemonkey": false,
+        "greasemonkey": false
     },
+    "parser": "@typescript-eslint/parser",
     "extends": [
       "eslint:recommended"
     ],
