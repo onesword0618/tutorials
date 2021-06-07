@@ -24,17 +24,26 @@
       "jsx-a11y",
       "json-format",
       "@typescript-eslint",
-      "jsdoc"
+      "jsdoc",
+      "jest",
+      "jest-dom",
+      "prettier",
+      "testing-library"
     ],
     "extends": [
-      "eslint:recommended",
       "eslint-plugin-react",
       "plugin:react-hooks/recommended",
       "plugin:jsx-a11y/recommended",
       "plugin:json/recommended",
-      "plugin:@typescript-eslint/recommended",
       "plugin:@typescript-eslint/recommended-requiring-type-checking",
-      "plugin:jsdoc/recommended"
+      "plugin:jsdoc/recommended",
+      "plugin:jest/recommended",
+      "plugin:jest-dom/recommended",
+      "plugin:prettier/recommended",
+      "plugin:testing-library/react",
+      "airbnb",
+      "airbnb-typescript",
+      "prettier"
     ],
     "settings": {
       "json/sort-package-json": "standard",
