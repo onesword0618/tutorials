@@ -1,32 +1,82 @@
 {
+    "root": true,
     "env": {
         "browser": true,
-        "node": false,
-        "commonjs": false,
-        "shared-node-browser": false,
-        "es6": false,
-        "es2017": false,
-        "es2020": false,
-        "es2021": true,
-        "worker": false,
-        "amd": false,
-        "mocha": false,
-        "jasmine": false,
         "jest": true,
-        "phantomjs": false,
-        "protractor": false,
-        "qunit": false,
-        "jquery": false,
-        "prototypejs": false,
-        "shelljs": false,
-        "meteor": false,
-        "mongo": false,
-        "applescript": false,
-        "nashorn": false,
-        "serviceworker": false,
-        "atomtest": false,
-        "embertest": false,
-        "webextensions": false,
-        "greasemonkey": false,
+        "jest/globals": true,
+        "es6": true,
+        "node": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true,
+        "generators": false,
+        "objectLiteralDuplicateProperties": false
+      },
+      "sourceType": "module",
+      "ecmaVersion": 12
+    },
+    "plugins": [
+      "import",
+      "@typescript-eslint",
+      "react",
+      "react-hooks",
+      "jsx-a11y",
+      "jsdoc",
+      "json",
+      "jest",
+      "jest-dom",
+      "testing-library"
+    ],
+    "extends": [
+      // base-rules
+      "airbnb-typescript",
+      // typescript
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      // react
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:jsx-a11y/recommended",
+      // documentation
+      "plugin:jsdoc/recommended",
+      // json
+      "plugin:json/recommended",
+      // testing
+      "plugin:jest/recommended",
+      "plugin:jest-dom/recommended",
+      "plugin:testing-library/react",
+      // formatter-rules
+      "prettier"
+    ],
+    "settings": {
+      "json/sort-package-json": "standard",
+      "json/ignore-files": ["**/package-lock.json"],
+      "json/json-with-comments-files": ["**/tsconfig.json",".vscode/**"],
+      "react": {
+        "createClass": "createReactClass",
+        "pragma": "React",
+        "fragment": "Fragment",
+        "version": "detect",
+        "flowVersion": "0.53"
+      },
+      "propWrapperFunctions": [
+          "forbidExtraProps",
+          {"property": "freeze", "object": "Object"},
+          {"property": "myFavoriteWrapper"}
+      ],
+      "componentWrapperFunctions": [
+          "observer",
+          {"property": "styled"},
+          {"property": "observer", "object": "Mobx"},
+          {"property": "observer", "object": "<pragma>"}
+      ],
+      "linkComponents": [
+        "Hyperlink",
+        {"name": "Link", "linkAttribute": "to"}
+      ]
+    },
+    "globals": {
     }
 }
