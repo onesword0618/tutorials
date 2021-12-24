@@ -1,21 +1,21 @@
-import '../index.css';
+import "../index.css";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { Board } from './Board';
-import { Moves } from './Moves';
-import { findWinner } from '../domain/findWinner';
+import { Board } from "./Board";
+import { Moves } from "./Moves";
+import { findWinner } from "../domain/findWinner";
 
-export const Game : React.FC = () => {
-  const [history, setHistory] = useState(
-    [{
+export const Game: React.FC = () => {
+  const [history, setHistory] = useState([
+    {
       squares: Array(9).fill(null),
       location: {
         col: 0,
-        row: 0
-      }
-    }]
-  );
+        row: 0,
+      },
+    },
+  ]);
 
   const [stepNumber, setStepNumber] = useState<number>(0);
   const [xIsNext, setXIsNext] = useState<boolean>(true);
@@ -28,18 +28,20 @@ export const Game : React.FC = () => {
 
     if (findWinner(squares).winner || squares[i]) {
       return;
-    };
+    }
 
-    squares[i] = xIsNext ? 'X' : 'O';
-    setHistory(_history.concat([
-      {
-        squares: squares,
-        location: {
-          col: i % 3 + 1,
-          row: Math.trunc(i / 3 + 1),
-        }
-      }
-    ]));
+    squares[i] = xIsNext ? "X" : "O";
+    setHistory(
+      _history.concat([
+        {
+          squares: squares,
+          location: {
+            col: (i % 3) + 1,
+            row: Math.trunc(i / 3 + 1),
+          },
+        },
+      ])
+    );
     setStepNumber(_history.length);
     setXIsNext(!xIsNext);
   };
@@ -50,16 +52,18 @@ export const Game : React.FC = () => {
   };
 
   const current = history[stepNumber];
-  const gameSet:{ winner:(string | null); line: (number[] | null) } = findWinner(current.squares);
+  const gameSet: { winner: string | null; line: number[] | null } = findWinner(
+    current.squares
+  );
 
-  let status:string;
-  if (gameSet.winner && gameSet.winner !== 'DRAW') {
-    status = 'Winner: ' + gameSet.winner;
-  } else if (gameSet.winner === 'DRAW') {
-    status = 'DRAW';
+  let status: string;
+  if (gameSet.winner && gameSet.winner !== "DRAW") {
+    status = "Winner: " + gameSet.winner;
+  } else if (gameSet.winner === "DRAW") {
+    status = "DRAW";
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
-  };
+    status = "Next player: " + (xIsNext ? "X" : "O");
+  }
 
   return (
     <div className="game">
@@ -73,19 +77,23 @@ export const Game : React.FC = () => {
       <div className="game-info">
         <div>{status}</div>
         <div>
-          <button onClick={() => {setToggle(!toggle)}}>
-            {toggle ? 'Sort descending' : 'Sort ascending'}
+          <button
+            onClick={() => {
+              setToggle(!toggle);
+            }}
+          >
+            {toggle ? "Sort descending" : "Sort ascending"}
           </button>
         </div>
-        {
-          toggle ?
+        {toggle ? (
           <ol>
             <Moves
               history={history}
               jumpTo={jumpTo}
               currentNumber={stepNumber}
             />
-          </ol> :
+          </ol>
+        ) : (
           <ol reversed>
             <Moves
               history={history.reverse()}
@@ -93,7 +101,7 @@ export const Game : React.FC = () => {
               currentNumber={stepNumber}
             />
           </ol>
-        }
+        )}
       </div>
     </div>
   );
