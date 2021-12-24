@@ -1,9 +1,8 @@
-export type ISquare = 'X' | 'O' | null;
+export type ISquare = "X" | "O" | null;
 export type History = {
-  squares: ISquare[],
+  squares: ISquare[];
   location: {
-    col: number,
-    row: number
-  }
-
-}
+    col: number;
+    row: number;
+  };
+};

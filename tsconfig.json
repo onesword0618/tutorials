@@ -5,10 +5,7 @@
     "target": "es2020",
     // case Back End use commonjs
     "module": "ESNext",
-    "lib": [
-      "DOM",
-      "ES2020"
-    ],
+    "lib": ["DOM", "ES2020"],
     "jsx": "react",
     "declarationMap": true,
     "sourceMap": true,
@@ -39,15 +36,9 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "src/*/*",
-    "test/**/*",
-  ],
-  "exclude": [
-    "dist",
-    "node_modules",
-  ],
+  "include": ["src/*/*", "test/**/*"],
+  "exclude": ["dist", "node_modules"],
   "compileOnSave": false
 }
