@@ -43,9 +43,6 @@ Sorry, Not NPM Package.
   npm run test ... Run Jest Test
 ```
 
-build : npm run build ... 配布用資材の構築を実施
-start : npm start ... 開発サーバーが起動
-
 ## License
 
 - [MIT](./LICENSE)
